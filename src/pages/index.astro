@@ -1,11 +1,91 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
+<Layout title="Shravan Jain">
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Shravan Jain</h1>
+      <p class="subtitle">BACKEND DEVELOPER • JAVA • SPRING BOOT</p>
 
-<Layout>
-	<Welcome />
+      <p>
+        I'm a backend developer who enjoys understanding systems from first principles. I learn by asking what problem a technology solves before learning how it works. That curiosity drives how I build software, explore new technologies, and write about what I learn.
+      </p>
+    </div>
+
+    <img
+      src="/me.jpg"
+      alt="Shravan Jain"
+      class="hero-photo"
+    />
+  </div>
+
+  <div class="section">
+    <div class="section-label">writing</div>
+    <p>
+      Notes from projects, backend development, system design, Linux, networking, and the technologies I'm learning.
+    </p>
+    <a href="/writings" class="arrow-link">Check out the writings <span class="arrow">→</span></a>
+  </div>
+
+  <div class="section">
+    <div class="section-label">projects</div>
+    <p>
+      Projects focused on backend engineering, distributed systems, security, and full-stack applications.
+    </p>
+    <a href="/projects" class="arrow-link">See the projects <span class="arrow">→</span></a>
+  </div>
 </Layout>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+  .hero-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .hero-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 100px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    flex-shrink: 0;
+  }
+  @media (max-width: 600px) {
+    .hero {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+    .hero-photo {
+      width: 96px;
+      height: 96px;
+    }
+  }
+
+  .arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text);
+    padding-bottom: 2px;
+    transition: gap 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .arrow-link .arrow {
+    transition: transform 0.15s ease;
+  }
+  .arrow-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    gap: 0.6rem;
+  }
+</style>
