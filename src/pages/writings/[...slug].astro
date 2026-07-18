@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('writings')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );
+  return posts.map((post, index) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      prev: posts[index + 1] ?? null,
+      next: posts[index - 1] ?? null,
+    },
+  }));
+}
+
+const { post, prev, next } = Astro.props;
+const { Content } = await render(post);
+---
+<Layout title={post.data.title}>
+  <a href="/writings" class="back-link">← all writings</a>
+
+  <h1>{post.data.title}</h1>
+
+  <div class="post-meta">
+    <span>{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+    {post.data.tags.length > 0 && (
+      <span class="post-tags">{post.data.tags.join(' · ')}</span>
+    )}
+  </div>
+
+  <div class="prose">
+    <Content />
+  </div>
+
+  <nav class="post-nav">
+    <div>
+      {prev && <a href={`/writings/${prev.id}`}>← {prev.data.title}</a>}
+    </div>
+    <div class="nav-right">
+      {next && <a href={`/writings/${next.id}`}>{next.data.title} →</a>}
+    </div>
+  </nav>
+</Layout>
+
+<style>
+  .back-link {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-decoration: none;
+    margin-bottom: 2rem;
+  }
+  .back-link:hover { color: var(--text); }
+
+  .post-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .post-tags { color: var(--accent); }
+
+  .prose { font-size: 1rem; }
+  .prose :global(p) { margin-bottom: 1.2rem; }
+  .prose :global(h2) { font-size: 1.3rem; margin-top: 2.5rem; }
+  .prose :global(h3) { font-size: 1.1rem; margin-top: 2rem; }
+  .prose :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    margin: 1.5rem 0;
+    display: block;
+  }
+  .prose :global(code) {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    background: var(--line);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+  }
+  .prose :global(pre) {
+    background: var(--line);
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  .prose :global(pre code) { background: none; padding: 0; }
+  .prose :global(blockquote) {
+    border-left: 2px solid var(--line);
+    padding-left: 1rem;
+    color: var(--muted);
+    margin-left: 0;
+  }
+
+  .post-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+  }
+  .nav-right { text-align: right; }
+  .post-nav a { text-decoration: none; color: var(--muted); }
+  .post-nav a:hover { color: var(--accent); }
+</style>
