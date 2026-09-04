@@ -2,97 +2,198 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Projects">
-<h1>Projects</h1>
+  <h1>Projects</h1>
 
-<div class="section">
-  <div class="project-card">
-    <div class="project-header">
-      <h3>Mnemos-jrnl</h3>
+  <div class="section">
+    <div class="project-card">
+      <div class="project-header">
+        <h3>Mnemos-jrnl</h3>
+        <span class="status-dot"></span>
+      </div>
+      <p class="project-desc">
+        A minimalist journaling app with a dark editorial UI. Spring Boot +
+        MongoDB backend, React frontend, fully containerized with Docker
+        and shipped through a CI/CD pipeline on every push.
+      </p>
+      <div class="tech-stack">
+        <span class="tech-tag">Spring Boot</span>
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">MongoDB</span>
+        <span class="tech-tag">Docker</span>
+      </div>
+      <a href="https://github.com/ShravannJain/Mnemos-jrnl" class="arrow-link" target="_blank" rel="noopener">
+        View on GitHub <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>StudySift</h3>
+        <span class="status-dot"></span>
+      </div>
+      <p class="project-desc">
+        A Firefox extension that analyzes YouTube videos with AI, extracts
+        key insights, flags a difficulty level (Beginner / Intermediate /
+        Advanced), surfaces useful timestamps, and tells you whether the
+        video's actually worth watching.
+      </p>
+      <div class="tech-stack">
+        <span class="tech-tag">Firefox Extension</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">AI</span>
+      </div>
+      <a href="https://github.com/ShravannJain/studysift" class="arrow-link" target="_blank" rel="noopener">
+        View on GitHub <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>stashr</h3>
+        <span class="status-dot"></span>
+      </div>
+      <p class="project-desc">
+        A simple Bash utility that automatically sorts files into their
+        proper folders — keeps a Downloads directory (or any directory)
+        clean by stashing documents, images, videos, and more where they
+        belong.
+      </p>
+      <div class="tech-stack">
+        <span class="tech-tag">Bash</span>
+        <span class="tech-tag">Automation</span>
+        <span class="tech-tag">CLI</span>
+      </div>
+      <a href="https://github.com/ShravannJain/stashr" class="arrow-link" target="_blank" rel="noopener">
+        View on GitHub <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>devops-journey</h3>
+        <span class="status-dot"></span>
+      </div>
+      <p class="project-desc">
+        An ongoing log of Docker and scripting practice — one-off Bash
+        scripts for spinning up and tearing down containers, plus Python
+        scripting exercises along the way.
+      </p>
+      <div class="tech-stack">
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">Bash</span>
+        <span class="tech-tag">Python</span>
+      </div>
+      <a href="https://github.com/ShravannJain/devops-journey" class="arrow-link" target="_blank" rel="noopener">
+        View on GitHub <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>Blender Collection</h3>
+        <span class="status-dot"></span>
+      </div>
+      <p class="project-desc">
+        A collection of Blender 3D models built for learning, practice, and
+        experimentation — from geometry nodes exercises to full scene
+        renders like a hospital corridor and a grassy environment.
+      </p>
+      <div class="tech-stack">
+        <span class="tech-tag">Blender</span>
+        <span class="tech-tag">3D</span>
+      </div>
+      <a href="https://github.com/ShravannJain/Blender-Collection" class="arrow-link" target="_blank" rel="noopener">
+        View on GitHub <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>packetracer-hub</h3>
+        <span class="status-dot"></span>
+      </div>
+      <p class="project-desc">
+        A collection of Cisco Packet Tracer networking projects, including
+        a home-lab setup with a PC, laptop, cable modem, internet cloud,
+        and a Cisco server — built to learn and simulate networking
+        concepts.
+      </p>
+      <div class="tech-stack">
+        <span class="tech-tag">Cisco Packet Tracer</span>
+        <span class="tech-tag">Networking</span>
+      </div>
+      <a href="https://github.com/ShravannJain/packetracer-hub" class="arrow-link" target="_blank" rel="noopener">
+        View on GitHub <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="coming-soon">
       <span class="status-dot"></span>
+      <p>
+        Bro's cooking cool stuffs rn.
+      </p>
     </div>
-    <p class="project-desc">
-      A minimalist journaling app with a dark editorial UI. Spring Boot +
-      MongoDB backend, React frontend, fully containerized with Docker
-      and shipped through a CI/CD pipeline on every push.
-    </p>
-    <div class="tech-stack">
-      <span class="tech-tag">Spring Boot</span>
-      <span class="tech-tag">React</span>
-      <span class="tech-tag">MongoDB</span>
-      <span class="tech-tag">Docker</span>
-    </div>
-    <a href="https://github.com/ShravannJain/Mnemos-jrnl" class="arrow-link" target="_blank" rel="noopener">
-      View on GitHub <span class="arrow">→</span>
+
+    <a href="https://github.com/ShravannJain" class="arrow-link" target="_blank" rel="noopener">
+      Check out other projects here <span class="arrow">→</span>
     </a>
   </div>
-
-  <div class="coming-soon">
-    <span class="status-dot"></span>
-    <p>
-      Bro's cooking cool stuffs rn.
-    </p>
-  </div>
-
-  <a href="https://github.com/ShravannJain" class="arrow-link" target="_blank" rel="noopener">
-    Check out other projects here <span class="arrow">→</span>
-  </a>
-</div>
 </Layout>
 
 <style>
-.project-card {
+  .project-card {
     border: 1px solid var(--text);
     border-opacity: 0.15;
     border-radius: 8px;
     padding: 1.25rem 1.5rem;
     margin-bottom: 2rem;
     transition: border-color 0.15s ease, transform 0.15s ease;
-}
-.project-card:hover {
+  }
+  .project-card:hover {
     border-color: var(--accent);
     transform: translateY(-2px);
-}
-.project-header {
+  }
+  .project-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0.5rem;
-}
-.project-header h3 {
+  }
+  .project-header h3 {
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.05rem;
     margin: 0;
     color: var(--text);
-}
-.project-desc {
+  }
+  .project-desc {
     color: var(--text);
     opacity: 0.85;
     font-size: 0.9rem;
     line-height: 1.5;
     margin: 0.5rem 0 1rem;
-}
-.tech-stack {
+  }
+  .tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 1rem;
-}
-.tech-tag {
+  }
+  .tech-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
     padding: 0.2rem 0.6rem;
     border: 1px solid var(--text);
     border-radius: 999px;
     opacity: 0.7;
-}
-.coming-soon {
+  }
+  .coming-soon {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
     color: var(--text);
     opacity: 0.85;
-}
-.status-dot {
+  }
+  .status-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -100,12 +201,12 @@ import Layout from '../layouts/Layout.astro';
     margin-top: 0.5rem;
     flex-shrink: 0;
     animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse {
+  }
+  @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.4; }
-}
-.arrow-link {
+  }
+  .arrow-link {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
@@ -118,10 +219,10 @@ import Layout from '../layouts/Layout.astro';
     border-bottom: 1px solid var(--text);
     padding-bottom: 2px;
     transition: gap 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-}
-.arrow-link:hover {
+  }
+  .arrow-link:hover {
     color: var(--accent);
     border-color: var(--accent);
     gap: 0.6rem;
-}
+  }
 </style>
